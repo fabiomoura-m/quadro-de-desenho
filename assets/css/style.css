@@ -42,7 +42,7 @@ h1 {
     border: 5px solid #FFF;
 }
 
-.clear {
+.clear, .downloadImage {
     border: 1px solid #000;
     background-color: rgba(0, 0, 0, 0.2);
     color: #FFF;
@@ -50,7 +50,7 @@ h1 {
     margin-top: 20px;
     cursor: pointer;
 }
-.clear:hover{
+.clear:hover, .downloadImage:hover{
     color: rgba(0, 0, 0, 0.719);
     background-color: rgba(255, 255, 255, 0.945);
 }

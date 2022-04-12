@@ -15,6 +15,7 @@ screen.addEventListener('mousedown', mouseDownEvent);
 screen.addEventListener('mousemove', mouseMoveEvent);
 screen.addEventListener('mouseup', mouseUpEvent);
 document.querySelector('.clear').addEventListener('click', clearScreen);
+document.querySelector('.downloadImage').addEventListener('click', saveScreen);
 
 //Functions
 function colorClickEvent(e) {
@@ -56,6 +57,13 @@ function draw(x, y) {
 function clearScreen() {
   context.setTransform(1, 0, 0, 1, 0, 0);
   context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+}
+function saveScreen() {
+  const a = document.createElement('a');
+  a.download = 'imagem.png';
+  a.type = 'image/png';
+  a.href = screen.toDataURL();
+  a.click();
 }
 /*
 Passo a passo para desenhar no canvas:
