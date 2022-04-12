@@ -36,7 +36,22 @@ function mouseMoveEvent(e) {
 function mouseUpEvent() {
   canDraw = false;
 }
+function draw(x, y) {
+  let pointX = x - screen.offsetLeft;
+  let pointY = y - screen.offsetTop;
 
+  context.beginPath();
+  context.lineWidth = 5;
+  context.lineJoin = 'round';
+  context.moveTo(mouseX, mouseY);
+  context.lineTo(pointX, pointY);
+  context.closePath();
+  context.strokeStyle = currentColor;
+  context.stroke();
+
+  mouseX = pointX;
+  mouseY = pointY;
+}
 /*
 Passo a passo para desenhar no canvas:
 -Quando o click do mouse ABAIXAR, ative o modo desenho.
